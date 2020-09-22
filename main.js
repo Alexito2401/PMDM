@@ -1,2 +1,2 @@
 
-alert("Soy el primer script");
+alertMessage=alert("Soy el primer script");
