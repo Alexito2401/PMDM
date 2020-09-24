@@ -4,4 +4,4 @@ for (let i = 0; i < values.length; i++) {
     var tipo=values[i];
     console.log(typeof tipo);
     document.write("<br>");
-}
+} 

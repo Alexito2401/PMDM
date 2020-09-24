@@ -5,8 +5,7 @@ function valorAbsoluto(){
     a=prompt('Elige un numero');
     a=Number(a);
 
-    a = a * a;
-    a = Math.sqrt(a);
+    a=Math.abs(a)
 
     alert("El valor absoluto es "+a);
 }

@@ -18,13 +18,11 @@ function tirarDado() {
 
     if (num == aleatorio) {
         console.log("Felicitaciones, has acertado");
-        console.log("<br>");
-        console.log("<br>");
+        
         document.write("<input type='button' value='Actualizar' onclick='location.reload()'/>");
     } else {
         console.log("Vaya, intentalo de nuevo");
-        console.log("<br>");
-        console.log("<br>");
+        
         document.write("<input type='button' value='Actualizar' onclick='location.reload()'/>");
 
     }
