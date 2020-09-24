@@ -17,14 +17,14 @@ function tirarDado() {
 
 
     if (num == aleatorio) {
-        document.write("Felicitaciones, has acertado");
-        document.write("<br>");
-        document.write("<br>");
+        console.log("Felicitaciones, has acertado");
+        console.log("<br>");
+        console.log("<br>");
         document.write("<input type='button' value='Actualizar' onclick='location.reload()'/>");
     } else {
-        document.write("Vaya, intentalo de nuevo");
-        document.write("<br>");
-        document.write("<br>");
+        console.log("Vaya, intentalo de nuevo");
+        console.log("<br>");
+        console.log("<br>");
         document.write("<input type='button' value='Actualizar' onclick='location.reload()'/>");
 
     }
