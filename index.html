@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Ahora trabajando con DOM dinámico</title>
+    <script src="main.js" language="javascript" type="text/javascript"></script>
+    <style type="text/css"> 
+        body{
+            font-size:medium;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            color: blue;
+            text-decoration: underline;
+        }
+     </style>
+</head>
+
+<body style="background: silver;font-family: sans-serif; height: 100%; margin: 0px;">
+    <div id="Presntacion">
+        <h1 align="center">Trabajo con selectores</h1>
+        <article>
+            <p>Crea un documento HTML que tenga un título de cabecera de primer nivel “Trabajo
+                con selectores” y a continuación contenga un párrafo, dentro de un artículo, con este
+                mismo texto descriptivo de la actividad. Estos dos elementos deben estar presentes
+                dentro de una sección (parte diferenciada del documento)</p>
+        </article>
+    </div>
+
+    <div id="imagenContenedor" align="center">
+        <img id="imagen" src="imagen1.png">
+        <input type="button" id="boton" value="select" onClick="verificacion()" />
+        <br>
+        <br>
+        
+
+        <button id="boton" onclick="changeImg()" onclick="changeColor(this)" style="padding: 12px; color: white;background: #00A2FF; border-radius: 51px;">Cambiar imagen</button>
+    </div>
+
+    <footer align="center" style="background: black; color: white ; font-size: small; bottom: 0; position: absolute; width: 100%; margin: 0%;">
+        
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/"><p style="padding: 10px;">© Alex Bernal - 2020 </p></a>
+    </footer>
+</body>
+
+</html>
