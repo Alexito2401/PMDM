@@ -1,0 +1,35 @@
+<!DOCTYPE html>    
+<html>
+ <head>
+  <link type="text/css" rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
+  <title>Formulario de contacto</title>
+ </head>
+ <body>
+  <section class="formulario">
+    <form name="miformulario" method="post">
+        <p>Nombre: <input type="text" name="nombre" size="20" required=""></p>
+
+        <p>Apellidos: <input type="text" name="apellidos" size="20" required=""></p>
+
+        <p>Fecha: <input type="date" name="fecha" required=""></p>
+
+        <p>Dirrecion: <input type="text" name="dirrecion" size="70"></p>
+
+        <p>Codigo Postal: <input type="text" name="codigo" min="0" maxlength="5" size="5"  required="" onkeypress="soloNumeros(this)"></p>
+
+        <p>Provicncia: <select name="menu" required="">
+            <option value="">Elige una opción</option>
+            <option>Valencia</option>
+            <option>Alicante</option>
+            <option>Castellón</option>
+          </select>
+        </p>
+
+          <p>Municipio: <input type="text" name="municipio" size="20" required="" onkeyup="mayus(this)"></p>
+
+          <input type="submit" value="Enviar">
+        </form>
+  </section>
+ </body>
+</html>

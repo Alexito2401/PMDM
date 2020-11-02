@@ -1,0 +1,19 @@
+{
+  "name": "ae3",
+  "version": "1.0.0",
+  "description": "Formulario de reocgida de datos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexito2401/PMDM.git"
+  },
+  "author": "Alex Bernal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alexito2401/PMDM/issues"
+  },
+  "homepage": "https://github.com/Alexito2401/PMDM#readme"
+}
