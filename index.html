@@ -13,10 +13,10 @@
     <section id="paso1" class="div_paso1">
       <div id="mipresentacion" align="center">
         <h1>Formulario de datos</h1>
-        <p>Para poder acceder al siguiente paso, hay que darle al boton continuar, deberas completar el formulario, y
+        <p>Para poder acceder al siguiente paso, hay que darle al boton continuar, deberas completar el formulario (todos los datos obligatorios contendran el caracter *), y
           darle al boton continuar y una vez eso se le mostraran los datos,</p>
         <p>en caso de querer cambiarlos, deberas darle al boton de atras, una vez completado todo se le redigira al link
-          de su CallBack</p>
+          de su CallBack en un plazo de 5 seg</p>
 
         <form>
           <label>Introduce una CallBack: </label>
@@ -36,46 +36,29 @@
 
     <section id="paso2" class="div_paso2">
       <div id="miformulario">
-        <form name="rellenar" action="#">
-          <h2>Complete el formulario:</h2>
-
-          <div class="form">
-            <p> Nombre: <input id="Nombre" name="Nombre" type="text" required="" /> </p>
-          </div>
-          <div class="form">
-            <p> Apellidos: <input id="Apellidos" name="Apellidos" type="text" required="" /></p>
-          </div>
-          <div class="form">
-            <p> Fecha de nacimiento: <input id="Fecha" name="Fecha" type="date" required="" /></p>
-          </div>
-          <div class="form">
-            <p> Dirrecion: <input id="Dirrecion" name="Dirrecion" type="text" /></p>
-          </div>
-          <div class="form">
-            <p> Codigo Postal: <input type="text" id="Codigo" name="Codigo" id="idcodigo" maxlength="5" size="5"
-                required=""></p>
-          </div>
-          <div class="form">
-            <p> Provincia: <select id="Provincia" name="Provincia" type="text">
+        <form name="rellenar" action="#" >
+          <h2>Escribe tu texto:</h2>
+             <p> *Nombre: <input id="Nombre" type="text" required=""/> </p> 
+             <p> *Apellidos: <input id="Apellidos" type="text" required=""/></p>
+             <p> *Fecha de nacimiento: <input id="Fecha" type="date" required=""/></p>
+             <p> Dirrecion: <input id="Dirrecion" type="text" /></p>
+             <p> *Codigo Postal: <input type="text" id="Codigo" id="idcodigo" maxlength="5" size="5"></p>
+             <p> *Provincia: <select id="Provincia" type="text" required="">
                 <option value=""></option>
                 <option value="Valencia">Valencia</option>
                 <option value="Castellon">Castellon</option>
                 <option value="Alicante">Alicante</option>
-
-              </select></p>
-          </div>
-
-          <div class="form">
-            <p> Municipio: <input id="Municipio" name="Municipio" type="text" required="" /></p>
-          </div>
-
-          <p><input name="ver" type="button" value="Validar" onclick="pregunta()" />
-        </form>
+  
+             </select></p>
+             <p> *Municipio: <input id="Municipio" type="text" required=""/></p>
+  
+             <input name="ver" type="button" value="Validar" onclick="pregunta()"/>
+          </form>
       </div>
       <nav>
         <ul>
-          <li><button id="atras2" name="atras2">Atras</button></li>
-          <li style="float: right;"><button id="continuar2" name="continuar2" onclick="continuarPaso2()" onclick="obtenerDatos()">Continuar</button></li>
+          <li><button id="atras2" name="atras2" onclick="atrasPaso2()">Atras</button></li>
+          <li style="float: right;"><button id="continuar2" name="continuar2" onclick="continuarPaso2(); escribe()">Continuar</button></li>
         </ul>
       </nav>
     </section>
@@ -83,10 +66,10 @@
     <!--Pagina 3-->
 
     <section id="paso3" class="div_paso3">
-      <div id='caja'></div>
+      <div id="caja"></div>
       <nav>
         <ul>
-          <li><button id="atras3" name="atras3">Atras</button></li>
+          <li><button id="atras3" name="atras3" onclick="atrasPaso3()">Atras</button></li>
           <li style="float: right;"><button id="continuar3" name="continuar3"
               onclick="continuarPaso3()">Continuar</button></li>
         </ul>
@@ -102,7 +85,7 @@
           <nav>
             <ul>
               <li><button id="atras3" name="atras3">Atras</button></li>
-              <li style="float: right;"><button id="Terminar" name="Terminar" onclick="">Terminar</button></li>
+              <li style="float: right;"><button id="Terminar" name="Terminar" onclick="terminar()">Terminar</button></li>
             </ul>
           </nav>
       </div>

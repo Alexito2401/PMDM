@@ -73,39 +73,30 @@ const pregunta = () => {
   }
 }
 
-function obtenerDatos(){
-  let nom = document.getElementById("Nombre").value;
-  let ape = document.getElementById("Apellidos").value;
-  let fec = document.getElementById("Fecha").value;
-  let dir = document.getElementById("Dirrecion").value;
-  let cod = document.getElementById("Codigo").value;
-  let pro = document.getElementById("Provincia").value;
-  let mun = document.getElementById("Municipio").value;
-
-  let div = document.getElementById("caja");
-
-  let formulario = [nom,ape,fec,dir,cod,pro,mun];
-
-  formulario.forEach(element => {
-    div.innerHTML = '<p>'+element+'</p>'
-  });
-}
-
-const mostrarFormulario = () =>{
+const escribe= () => {
   escribir = document.getElementById("caja")
-  miTitulo = "<p>" + document.rellenar.Nombre.value + "</p>"
-  miClave = "<p>" + document.rellenar.Apellido.value + "</p>"
-  miTexto = "<p>" + document.rellenar.Fecha.value + "</p>"
-  escribir.innerHTML = miTitulo + miClave + miTexto
-  }
-window.onload = function() {
-document.rellenar.ver.onclick = escribe
-}
+  minombre ="<p> Nombre: " + document.rellenar.Nombre.value + "</p>"
+  miapellido = "<p> Apellidos: " + document.rellenar.Apellidos.value + "</p>"
+  mifecha = "<p> Fecha de Nacimiento: " + document.rellenar.Fecha.value + "</p>"
+  midirrecion = "<p> Dirrecion: " + document.rellenar.Dirrecion.value + "</p>"
+  micodigo = "<p> Codigo Postal: " + document.rellenar.codigo.value + "</p>"
+  miprovincia = "<p> Provincia: " + document.rellenar.Provincia.value + "</p>"
+  mimunicipio = "<p> Municipio: " + document.rellenar.Municipio.value + "</p>"
+
+  escribir.innerHTML = minombre + miapellido + mifecha + midirrecion+ micodigo+ miprovincia+ mimunicipio;
+} 
 
 const mostrarCallback = () =>{
   let call = document.getElementById("CallBack").value;
   var callBack = document.getElementById('CallBack_Paso4');
   callBack.innerHTML = call;
+}
+
+const terminar = () => {
+  let callBack = document.getElementById("CallBack").value;
+
+  alert(callBack)
+    location.href=callBack;
 }
 
 const continuarPaso1 = () => {
@@ -137,3 +128,24 @@ const continuarPaso3 = () => {
     paso3.style.display = "none";
   }
 }
+
+const atrasPaso2 = () => {
+  var paso1 = document.getElementById('paso1');
+  var paso2 = document.getElementById('paso2');
+
+  if (paso1.style.display !== "none") {
+    paso1.style.display = "inline";
+    paso2.style.display = "none";
+  }
+}
+
+const atrasPaso3 = () => {
+  var paso2 = document.getElementById('paso2');
+  var paso3 = document.getElementById('paso3');
+
+  if (paso2.style.display !== "none") {
+    paso2.style.display = "inline";
+    paso3.style.display = "none";
+  }
+}
+
