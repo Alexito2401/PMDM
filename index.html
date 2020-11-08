@@ -36,7 +36,7 @@
 
     <section id="paso2" class="div_paso2">
       <div id="miformulario">
-        <form name="rellenar" action="#" >
+        <form name="rellenar" action="#">
           <h2>Complete el formulario:</h2>
 
           <div class="form">
@@ -49,7 +49,7 @@
             <p> Fecha de nacimiento: <input id="Fecha" name="Fecha" type="date" required="" /></p>
           </div>
           <div class="form">
-            <p> Dirrecion: <input name="Dirrecion" type="text" /></p>
+            <p> Dirrecion: <input id="Dirrecion" name="Dirrecion" type="text" /></p>
           </div>
           <div class="form">
             <p> Codigo Postal: <input type="text" id="Codigo" name="Codigo" id="idcodigo" maxlength="5" size="5"
@@ -75,7 +75,7 @@
       <nav>
         <ul>
           <li><button id="atras2" name="atras2">Atras</button></li>
-          <li style="float: right;"><button id="continuar2" name="continuar2" onclick="continuarPaso2()" onclick="escribe()">Continuar</button></li>
+          <li style="float: right;"><button id="continuar2" name="continuar2" onclick="continuarPaso2()" onclick="obtenerDatos()">Continuar</button></li>
         </ul>
       </nav>
     </section>

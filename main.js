@@ -73,6 +73,24 @@ const pregunta = () => {
   }
 }
 
+function obtenerDatos(){
+  let nom = document.getElementById("Nombre").value;
+  let ape = document.getElementById("Apellidos").value;
+  let fec = document.getElementById("Fecha").value;
+  let dir = document.getElementById("Dirrecion").value;
+  let cod = document.getElementById("Codigo").value;
+  let pro = document.getElementById("Provincia").value;
+  let mun = document.getElementById("Municipio").value;
+
+  let div = document.getElementById("caja");
+
+  let formulario = [nom,ape,fec,dir,cod,pro,mun];
+
+  formulario.forEach(element => {
+    div.innerHTML = '<p>'+element+'</p>'
+  });
+}
+
 const mostrarFormulario = () =>{
   escribir = document.getElementById("caja")
   miTitulo = "<p>" + document.rellenar.Nombre.value + "</p>"
