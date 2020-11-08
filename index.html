@@ -1,56 +1,85 @@
-<!DOCTYPE html>    
+<!DOCTYPE html>
 <html>
- <head>
+
+<head>
   <link type="text/css" rel="stylesheet" href="style.css">
   <script src="main.js"></script>
   <title>Formulario de contacto</title>
- </head>
- <body>
-   <div id=contenido>
-   <nav>
-    <ul>
-      <li><a href="default.html">Atras</a></li>
-      <li name="continuar" style="float: right;">Continuar</li>
-    </ul>
-  </nav>
-<section id="presentacion">
-  <div id="mipresentacion" align="center">
-    <h1>Formulario de datos</h1>
-    <p>Para poder acceder al siguiente paso, hay que darle al boton continuar, y para acceder al paso anterior al boton atras (al darle al boton atras se perderan los datos del paso en el que te encuentras)</p>
+</head>
 
-    <label>Introduce una CallBack: </label>
-    <input name="CallBack" type="text" required=""/>
-  </div>
-</section>
+<body>
+  <div id=contenido>
+    <section id="paso1" class="div_paso1">
+      <div id="mipresentacion" align="center">
+        <h1>Formulario de datos</h1>
+        <p>Para poder acceder al siguiente paso, hay que darle al boton continuar, y para acceder al paso anterior al
+          boton atras (al darle al boton atras se perderan los datos del paso en el que te encuentras)</p>
 
-<hr align="right" size=10 noshade="noshade" style="background-color: #333;">
+        <label>Introduce una CallBack: </label>
+        <input id="CallBack" name="CallBack" type="text" required="" />
+        <input name="Validar" type="button" value="Validar" onclick="validarCall()" />
+      </div>
+      <nav>
+        <ul>
+          <li style="float: right;"><button id="continuar1" name="continuar1" onclick="continuarPaso1()">Continuar</button></li>
+        </ul>
+      </nav>
+    </section>
 
-  <section id="formulario">
-    <div id="miformulario">
-      <form name="rellenar" action="#" >
-        <h2>Escribe tu texto:</h2>
-           <p> Nombre: <input name="Nombre" type="text" required=""/> </p> 
-           <p> Apellidos: <input name="Apellidos" type="text" required=""/></p>
-           <p> Fecha de nacimiento: <input name="Fecha" type="date" required=""/></p>
-           <p> Dirrecion: <input name="Dirrecion" type="text" /></p>
-           <p> Codigo Postal: <input type="text" name="codigo" id="idcodigo" maxlength="5" size="5"></p>
-           <p> Provincia: <select name="Provincia" type="text" required="">
-              <option value=""></option>
-              <option value="Valencia">Valencia</option>
-              <option value="Castellon">Castellon</option>
-              <option value="Alicante">Alicante</option>
+    <section id="paso2" class="div_paso2">
+      <div id="miformulario">
+        <form name="rellenar" action="#">
+          <h2>Escribe tu texto:</h2>
 
-           </select></p>
-           <p> Municipio: <input name="Municipio" type="text" required=""/></p>
+          <div class="form">
+            <p> Nombre: <input name="Nombre" type="text" required="" /> </p>
+          </div>
+          <div class="form">
+            <p> Apellidos: <input name="Apellidos" type="text" required="" /></p>
+          </div>
+          <div class="form">
+            <p> Fecha de nacimiento: <input name="Fecha" type="date" required="" /></p>
+          </div>
+          <div class="form">
+            <p> Dirrecion: <input name="Dirrecion" type="text" /></p>
+          </div>
+          <div class="form">
+            <p> Codigo Postal: <input type="text" name="Codigo" id="idcodigo" maxlength="5" size="5"></p>
+          </div>
+          <div class="form">
+            <p> Provincia: <select name="Provincia" type="text" required="">
+                <option value=""></option>
+                <option value="Valencia">Valencia</option>
+                <option value="Castellon">Castellon</option>
+                <option value="Alicante">Alicante</option>
 
-           <p><input name="ver" type="button" value="Enviar" />
+              </select></p>
+          </div>
+
+          <div class="form">
+            <p> Municipio: <input name="Municipio" type="text" required="" /></p>
+          </div>
+
+          <p><input name="ver" type="button" value="Enviar" onclick="escribe()" />
         </form>
-    </div>
-    
-    <hr align="right" size=10 noshade="noshade" style="background-color: #333;">
+      </div>
+      <nav>
+        <ul>
+          <li><button id="atras2" name="atras2">Atras</button></li>
+          <li style="float: right;"><button id="continuar2" name="continuar2" onclick="continuarPaso2()">Continuar</button></li>
+        </ul>
+      </nav>
+    </section>
 
-    <div id="caja"></div>
+    <section id="paso3" class="div_paso3">
+      <div id="caja"></div>
+      <nav>
+        <ul>
+          <li><button id="atras3" name="atras3">Atras</button></li>
+          <li style="float: right;"><button id="continuar3" name="continuar3" onclick="continuarPaso3()">Continuar</button></li>
+        </ul>
+      </nav>
+    </section>
+</body>
 
-    <div></div>
- </body>
 </html>

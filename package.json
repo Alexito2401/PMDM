@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Alexito2401/PMDM/issues"
   },
-  "homepage": "https://github.com/Alexito2401/PMDM#readme"
+  "homepage": "https://github.com/Alexito2401/PMDM#readme",
+  "dependencies": {
+    "node-modules": "^1.0.1"
+  }
 }
