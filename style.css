@@ -1,0 +1,64 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+body {
+    margin:0;
+    padding:0
+  }
+
+  /*#formulario{
+      display: none;
+  }*/
+
+  #miformulario{
+      margin-left: 20px;
+  }
+
+  #mipresentacion h1{
+    font-size: 40px;
+}
+
+  #mipresentacion p{
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+
+  #mipresentacion{
+    margin-top: 0%;
+}
+
+  label{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  #caja{   
+    width: 60%; 
+    margin-left: 20px;
+}
+
+    #caja p{
+        border: #111 solid 2px;
+        padding: 5px;
+        margin: 10px;
+    }

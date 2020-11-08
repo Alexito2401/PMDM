@@ -6,30 +6,51 @@
   <title>Formulario de contacto</title>
  </head>
  <body>
-  <section class="formulario">
-    <form name="miformulario" method="post">
-        <p>Nombre: <input type="text" name="nombre" size="20" required=""></p>
+   <div id=contenido>
+   <nav>
+    <ul>
+      <li><a href="default.html">Atras</a></li>
+      <li name="continuar" style="float: right;">Continuar</li>
+    </ul>
+  </nav>
+<section id="presentacion">
+  <div id="mipresentacion" align="center">
+    <h1>Formulario de datos</h1>
+    <p>Para poder acceder al siguiente paso, hay que darle al boton continuar, y para acceder al paso anterior al boton atras (al darle al boton atras se perderan los datos del paso en el que te encuentras)</p>
 
-        <p>Apellidos: <input type="text" name="apellidos" size="20" required=""></p>
+    <label>Introduce una CallBack: </label>
+    <input name="CallBack" type="text" required=""/>
+  </div>
+</section>
 
-        <p>Fecha: <input type="date" name="fecha" required=""></p>
+<hr align="right" size=10 noshade="noshade" style="background-color: #333;">
 
-        <p>Dirrecion: <input type="text" name="dirrecion" size="70"></p>
+  <section id="formulario">
+    <div id="miformulario">
+      <form name="rellenar" action="#" >
+        <h2>Escribe tu texto:</h2>
+           <p> Nombre: <input name="Nombre" type="text" required=""/> </p> 
+           <p> Apellidos: <input name="Apellidos" type="text" required=""/></p>
+           <p> Fecha de nacimiento: <input name="Fecha" type="date" required=""/></p>
+           <p> Dirrecion: <input name="Dirrecion" type="text" /></p>
+           <p> Codigo Postal: <input type="text" name="codigo" id="idcodigo" maxlength="5" size="5"></p>
+           <p> Provincia: <select name="Provincia" type="text" required="">
+              <option value=""></option>
+              <option value="Valencia">Valencia</option>
+              <option value="Castellon">Castellon</option>
+              <option value="Alicante">Alicante</option>
 
-        <p>Codigo Postal: <input type="text" name="codigo" min="0" maxlength="5" size="5"  required="" onkeypress="soloNumeros(this)"></p>
+           </select></p>
+           <p> Municipio: <input name="Municipio" type="text" required=""/></p>
 
-        <p>Provicncia: <select name="menu" required="">
-            <option value="">Elige una opción</option>
-            <option>Valencia</option>
-            <option>Alicante</option>
-            <option>Castellón</option>
-          </select>
-        </p>
-
-          <p>Municipio: <input type="text" name="municipio" size="20" required="" onkeyup="mayus(this)"></p>
-
-          <input type="submit" value="Enviar">
+           <p><input name="ver" type="button" value="Enviar" />
         </form>
-  </section>
+    </div>
+    
+    <hr align="right" size=10 noshade="noshade" style="background-color: #333;">
+
+    <div id="caja"></div>
+
+    <div></div>
  </body>
 </html>
