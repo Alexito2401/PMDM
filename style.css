@@ -84,12 +84,28 @@ body {
 .div_paso3{
     display: none;
 }
-
+.div_paso4{
+    display: none;
+}
 .form{
     flex-direction: column;
 }
 
 .error{
     background: grey;
-    color: red;
+    color: rgb(233, 98, 98);
+    border: solid, 1px, red
+}
+
+button{
+    border-radius: 3px;
+    border-color: white;
+    background: blue;
+    color: white;
+}
+
+p{
+    font-family: sans-serif;
+    font-size: 16px;
+    color:#5d5d5d;
 }
