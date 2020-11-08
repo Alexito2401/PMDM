@@ -1,5 +1,3 @@
-const callBackUrl = document.getElementById('CallBack');
-
 //validar si la callback esta vacia
 const validarCall = () => {
   //obteniendo el valor que se puso en campo text del formulario
@@ -73,26 +71,23 @@ const pregunta = () => {
   } else{
     alert('No se ha completado la informacion');
   }
-  
 }
 
-const escribe = () => {
-  escribir = document.getElementById('caja')
-  minombre = '<p> Nombre: ' + document.rellenar.Nombre.value + '</p>'
-  miapellido = '<p> Apellidos: ' + document.rellenar.Apellidos.value + '</p>'
-  mifecha = '<p> Fecha de Nacimiento: ' + document.rellenar.Fecha.value + '</p>'
-  midirrecion = '<p> Dirrecion: ' + document.rellenar.Dirrecion.value + '</p>'
-  micodigo = '<p> Codigo Postal: ' + document.rellenar.Codigo.value + '</p>'
-  miprovincia = '<p> Provincia: ' + document.rellenar.Provincia.value + '</p>'
-  mimunicipio = '<p> Municipio: ' + document.rellenar.Municipio.value + '</p>'
-  escribir.innerHTML = minombre + miapellido + mifecha + midirrecion + micodigo + miprovincia + mimunicipio;
-  window.onload = function () {
-    document.rellenar.ver.onclick = escribe
+const mostrarFormulario = () =>{
+  escribir = document.getElementById("caja")
+  miTitulo = "<p>" + document.rellenar.Nombre.value + "</p>"
+  miClave = "<p>" + document.rellenar.Apellido.value + "</p>"
+  miTexto = "<p>" + document.rellenar.Fecha.value + "</p>"
+  escribir.innerHTML = miTitulo + miClave + miTexto
   }
+window.onload = function() {
+document.rellenar.ver.onclick = escribe
 }
 
 const mostrarCallback = () =>{
-  let call = document.getElementById("CallBack_Paso4");
+  let call = document.getElementById("CallBack").value;
+  var callBack = document.getElementById('CallBack_Paso4');
+  callBack.innerHTML = call;
 }
 
 const continuarPaso1 = () => {

@@ -13,16 +13,21 @@
     <section id="paso1" class="div_paso1">
       <div id="mipresentacion" align="center">
         <h1>Formulario de datos</h1>
-        <p>Para poder acceder al siguiente paso, hay que darle al boton continuar, y para acceder al paso anterior al
-          boton atras (al darle al boton atras se perderan los datos del paso en el que te encuentras)</p>
+        <p>Para poder acceder al siguiente paso, hay que darle al boton continuar, deberas completar el formulario, y
+          darle al boton continuar y una vez eso se le mostraran los datos,</p>
+        <p>en caso de querer cambiarlos, deberas darle al boton de atras, una vez completado todo se le redigira al link
+          de su CallBack</p>
 
-        <label>Introduce una CallBack: </label>
-        <input id="CallBack" name="CallBack" type="text" required="" />
-        <input name="Validar" type="button" value="Validar" onclick="validarCall()" />
+        <form>
+          <label>Introduce una CallBack: </label>
+          <input id="CallBack" name="CallBack" type="text" required="" />
+          <input name="Validar" type="button" value="Validar" onclick="validarCall(this)" />
+        </form>
       </div>
       <nav>
         <ul>
-          <li style="float: right;"><button id="continuar1" name="continuar1" onclick="continuarPaso1()">Continuar</button></li>
+          <li style="float: right;"><button id="continuar1" name="continuar1"
+              onclick="continuarPaso1()">Continuar</button></li>
         </ul>
       </nav>
     </section>
@@ -31,11 +36,11 @@
 
     <section id="paso2" class="div_paso2">
       <div id="miformulario">
-        <form name="rellenar" action="#">
-          <h2>Escribe tu texto:</h2>
+        <form name="rellenar" action="#" >
+          <h2>Complete el formulario:</h2>
 
           <div class="form">
-            <p> Nombre: <input id="Nombre" name="Nombre" type="text" required=""/> </p>
+            <p> Nombre: <input id="Nombre" name="Nombre" type="text" required="" /> </p>
           </div>
           <div class="form">
             <p> Apellidos: <input id="Apellidos" name="Apellidos" type="text" required="" /></p>
@@ -47,7 +52,8 @@
             <p> Dirrecion: <input name="Dirrecion" type="text" /></p>
           </div>
           <div class="form">
-            <p> Codigo Postal: <input type="text" id="Codigo" name="Codigo" id="idcodigo" maxlength="5" size="5" required=""></p>
+            <p> Codigo Postal: <input type="text" id="Codigo" name="Codigo" id="idcodigo" maxlength="5" size="5"
+                required=""></p>
           </div>
           <div class="form">
             <p> Provincia: <select id="Provincia" name="Provincia" type="text">
@@ -63,7 +69,7 @@
             <p> Municipio: <input id="Municipio" name="Municipio" type="text" required="" /></p>
           </div>
 
-          <p><input name="ver" type="button" value="Enviar" onclick="pregunta()"/>
+          <p><input name="ver" type="button" value="Validar" onclick="pregunta()" />
         </form>
       </div>
       <nav>
@@ -77,11 +83,12 @@
     <!--Pagina 3-->
 
     <section id="paso3" class="div_paso3">
-      <div id="caja"></div>
+      <div id='caja'></div>
       <nav>
         <ul>
           <li><button id="atras3" name="atras3">Atras</button></li>
-          <li style="float: right;"><button id="continuar3" name="continuar3" onclick="continuarPaso3()">Continuar</button></li>
+          <li style="float: right;"><button id="continuar3" name="continuar3"
+              onclick="continuarPaso3()">Continuar</button></li>
         </ul>
       </nav>
     </section>
@@ -89,15 +96,15 @@
     <!--Pagina 4-->
 
     <section id="paso4" class="div_paso4">
-      <div id= "colaboracion">
+      <div id="colaboracion">
         <h3 align="center">Muchas gracias por su colaboracion</h3>
-        <p id="CallBack_Paso4"></p>
-        <nav>
-          <ul>
-            <li><button id="atras3" name="atras3">Atras</button></li>
-            <li style="float: right;"><button id="continuar3" name="continuar3" onclick="continuarPaso3()">Continuar</button></li>
-          </ul>
-        </nav>
+        <a id="CallBack_Paso4"></p>
+          <nav>
+            <ul>
+              <li><button id="atras3" name="atras3">Atras</button></li>
+              <li style="float: right;"><button id="Terminar" name="Terminar" onclick="">Terminar</button></li>
+            </ul>
+          </nav>
       </div>
     </section>
 </body>
