@@ -25,6 +25,9 @@ body {
     height: 300px;
     width: 100px;
     border: 2px solid salmon;
+    position: static;
+    flex-direction: column;
+    
 }
 
 .form-container {
