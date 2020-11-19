@@ -24,7 +24,7 @@ body {
 .image-container {
     height: 300px;
     width: 100px;
-    border: 1px solid salmon;
+    border: 2px solid salmon;
 }
 
 .form-container {
@@ -62,4 +62,9 @@ body {
 .result-container p {
     font-size: 0.5rem;
     color: lightgray;
+}
+
+.buttons-container{
+    float: left;
+    
 }
