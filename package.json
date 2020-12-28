@@ -6,11 +6,17 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
+    "axios": "^0.21.1",
+    "node-sass": "^5.0.0",
+    "primeicons": "^4.1.0",
+    "primereact": "^5.0.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
   },
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -34,5 +40,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alexito2401/PMDM/tree/PE1_PMB"
   }
 }
