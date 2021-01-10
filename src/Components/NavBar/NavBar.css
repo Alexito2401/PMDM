@@ -1,6 +1,6 @@
 .NavBar {
     background-color: #060b26;
-    height: 80px;
+    height: 10vh;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -18,15 +18,16 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: -100%;
-    transition: 850ms;
+    transition: 1500ms;
 }
 
 .nav-menu.active{
     left: 0;
-    transition: 350ms;
+    width: 250px;
+    transition: 700ms;
 }
 
 .nav-text{
@@ -56,7 +57,7 @@
 
 .nav-menu-items{
     width: 100%;
-    margin-top: 1.5rem;
+    margin-top: 5rem;
 }
 
 .navbar-toggle{

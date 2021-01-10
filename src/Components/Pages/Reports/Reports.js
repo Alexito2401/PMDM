@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Markets() {
+function Reports() {
     return (
         <div className='markets'>
             <h1>Markets</h1>
@@ -8,4 +8,4 @@ function Markets() {
     )
 }
 
-export default Markets
+export default Reports

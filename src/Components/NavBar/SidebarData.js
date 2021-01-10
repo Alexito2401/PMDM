@@ -14,12 +14,6 @@ export const SidebarData = [{
     cName: 'nav-text'
 },
 {
-    title: 'Markets',
-    path: '/markets',
-    icon: <i className="pi pi-dollar"></i>,
-    cName: 'nav-text'
-},
-{
     title: 'Bets',
     path: '/bets',
     icon: <i className="pi pi-money-bill"></i>,
@@ -31,4 +25,10 @@ export const SidebarData = [{
     icon: <i className="pi pi-user"></i>,
     cName: 'nav-text'
 },
+{
+    title: 'Reports',
+    path: '/Reports',
+    icon: <i className="pi pi-chart-bar"></i>,
+    cName: 'nav-text'
+}
 ]
