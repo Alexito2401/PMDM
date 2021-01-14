@@ -15,31 +15,30 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:44380/api/Usuarios')
+    axios.get('https://localhost:44380/api/Usuarios')
       .then(res => {
         const users = res.data;
         this.setState({ users });
       })
 
-    axios.get('http://localhost:44380/api/Mercados')
+    axios.get('https://localhost:44380/api/Mercados')
       .then(res => {
         const markets = res.data;
         this.setState({ markets });
       })
 
-    axios.get('http://localhost:44380/api/Eventos')
+    axios.get('https://localhost:44380/api/Eventos')
       .then(res => {
         const events = res.data;
         this.setState({ events });
       })
 
-    axios.get('http://localhost:44380/api/Apuestas')
+    axios.get('https://localhost:44380/api/Apuestas')
       .then(res => {
         const bets = res.data;
         this.setState({ bets });
       })
   }
-
 
 
   render() {

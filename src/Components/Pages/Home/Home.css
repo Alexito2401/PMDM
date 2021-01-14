@@ -8,8 +8,8 @@
   background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(214,207,214,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d6cfd6', GradientType=1 );
   color: black;
-  width: 30vh;
-  margin: 10vh;
+  width: 30%;
+  margin: 10%;
   float: left;
   background-color: blue;
   border-radius: 10px;
@@ -18,7 +18,7 @@
 
 .titleCard{
   color: #121212;
-  font-size: 4vh;
+  font-size: 30px;
 }
 
 .cardContent{

@@ -1,0 +1,58 @@
+.users{
+    color: whitesmoke;
+    font-size: 19px;
+    align-content: center;
+}
+
+.datatable-crud-demo{
+    margin: 0 auto;
+    margin-left: 200px;
+}
+
+.userstitle{
+    text-align: center;
+}
+
+.datatable{
+    width: 100%;
+}
+
+.columndatatable{
+    font-size: 20px;
+    width: 40%;
+}
+
+.trashButtom{
+    width: 20%;
+}
+
+
+.datatable-crud-demo .table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.textField{
+    height: 32px;
+    width: 200px;
+    border: 1px solid black;
+    padding: 0 32px 0 16px;
+}
+ .textField:hover{
+     cursor: pointer;
+ }
+
+ .btnSearch{
+     height: 34px;
+     width: 32px;
+     text-align: center;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .searchBar{
+     float: right;
+     padding: 20px;
+ }
+                

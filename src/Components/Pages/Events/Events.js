@@ -1,160 +1,144 @@
-import React from 'react';
-import { Chart } from 'primereact/chart';
+import 'primeicons/primeicons.css';
+import 'primereact/resources/themes/saga-blue/theme.css';
+import 'primereact/resources/primereact.css';
 
-const LineChartDemo = () => {
-    const basicData = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [
-            {
-                label: 'First Dataset',
-                data: [65, 59, 5, 81, 56, 55, 40],
-                fill: false,
-                borderColor: '#42A5F5'
-            },
-            {
-                label: 'Second Dataset',
-                data: [28, 48, 40, 19, 86, 27, 90],
-                fill: false,
-                borderColor: '#FFA726'
-            }
-        ]
+import React, { useState, useEffect, eventef, useRef } from 'react';
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
+import EventService from './EventService';
+import { Toast } from 'primereact/toast';
+import { Button } from 'primereact/button';
+import { Dialog } from 'primereact/dialog';
+import { InputText } from 'primereact/inputtext';
+import { Calendar } from 'primereact/calendar';
+import './events.css';
+
+const Events = () => {
+    let emptyevent = {
+        IdEvento: null,
+        local: '',
+        visitante: '',
+        fecha: '',
     };
 
-    const multiAxisData = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'Dataset 1',
-            fill: false,
-            borderColor: '#42A5F5',
-            yAxisID: 'y-axis-1',
-            data: [65, 59, 80, 81, 56, 55, 10]
-        }, {
-            label: 'Dataset 2',
-            fill: false,
-            borderColor: '#00bb7e',
-            yAxisID: 'y-axis-2',
-            data: [28, 48, 40, 19, 86, 27, 90]
-        }]
-    };
+    const [events, setevents] = useState(null);
+    const [password, setpassword] = useState(null);
+    const [eventDialog, seteventDialog] = useState(false);
+    const [deleteeventDialog, setDeleteeventDialog] = useState(false);
+    const [editeventPassWord, setediteventPassword] = useState(false);
+    const [selectedDate, setSelectedDate] = useState(null);
+    const [search, setSearch] = useState(null);
+    const [event, setevent] = useState(emptyevent);
+    const toast = useRef(null);
+    const dt = useRef(null);
+    const eventService = new EventService();
 
-    const lineStylesData = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [
-            {
-                label: 'First Dataset',
-                data: [65, 59, 80, 81, 56, 55, 40],
-                fill: false,
-                borderColor: '#42A5F5'
-            },
-            {
-                label: 'Second Dataset',
-                data: [28, 48, 40, 19, 86, 27, 90],
-                fill: false,
-                borderDash: [5, 5],
-                borderColor: '#66BB6A'
-            },
-            {
-                label: 'Third Dataset',
-                data: [12, 51, 62, 33, 21, 62, 45],
-                fill: true,
-                borderColor: '#FFA726',
-                backgroundColor: 'rgba(255,167,38,0.2)'
-            }
-        ]
-    };
+    useEffect(() => {
+        eventService.getEvents().then(data => setevents(data, console.log(data)));
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    const getLightTheme = () => {
-        let basicOptions = {
-            legend: {
-                labels: {
-                    fontColor: '#495057'
-                }
-            },
-            scales: {
-                xAxes: [{
-                    ticks: {
-                        fontColor: '#495057'
-                    }
-                }],
-                yAxes: [{
-                    ticks: {
-                        fontColor: '#495057'
-                    }
-                }]
-            }
-        };
-
-        let multiAxisOptions = {
-            responsive: true,
-            hoverMode: 'index',
-            stacked: false,
-            scales: {
-                xAxes: [{
-                    ticks: {
-                        fontColor: '#495057'
-                    },
-                    gridLines: {
-                        color: '#ebedef'
-                    }
-                }],
-                yAxes: [{
-                    type: 'linear',
-                    display: true,
-                    position: 'left',
-                    id: 'y-axis-1',
-                    ticks: {
-                        fontColor: '#495057'
-                    },
-                    gridLines: {
-                        color: '#ebedef'
-                    }
-                }, {
-                    type: 'linear',
-                    display: true,
-                    position: 'right',
-                    id: 'y-axis-2',
-                    ticks: {
-                        fontColor: '#495057'
-                    },
-                    gridLines: {
-                        drawOnChartArea: false,
-                        color: '#ebedef'
-                    }
-                }]
-            },
-            legend: {
-                labels: {
-                    fontColor: '#495057'
-                }
-            }
-        };
-
-        return {
-            basicOptions,
-            multiAxisOptions
-        }
+    const hideDeleteeventDialog = () => {
+        setDeleteeventDialog(false);
     }
 
-    const { basicOptions, multiAxisOptions } = getLightTheme();
+    const hideEditeventPasswordDialog = () => {
+        setediteventPassword(false);
+    }
+
+    const confirmDeleteevent = (event) => {
+        setevent(event);
+        setDeleteeventDialog(true);
+    }
+
+    const confirmEditPassword = (event) => {
+        setevent(event);
+        setediteventPassword(true);
+    }
+
+    const deleteevent = () => {
+        let _events = events.filter(val => val.email !== event.email);
+        setevent(_events);
+        //eventService.deleteevents(event.email);
+        setDeleteeventDialog(false);
+        setevent(emptyevent);
+        toast.current.show({ severity: 'success', summary: 'Successful', detail: 'event Deleted', life: 3000 });
+        eventService.getevents().then(data => setevent(data));
+    }
+
+    const editevent = () => {
+        let _events = events.filter(val => val.email !== event.email);
+        setevent(_events);
+        //eventService.changePassword(password, event.email)
+        console.log(password + " para " + event.email, event.nombre)
+        setediteventPassword(false);
+        toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Password changed', life: 3000 });
+    }
+
+    const actionBodyTemplate = (rowData) => {
+        return (
+            <React.Fragment>
+                <Button icon="pi pi-pencil" className="p-button-rounded p-button-success p-mr-2" onClick={() => confirmEditPassword(rowData)} />
+                <Button icon="pi pi-trash" className="p-button-rounded p-button-warning" onClick={() => confirmDeleteevent(rowData)} />
+            </React.Fragment>
+        );
+    }
+
+    const header = (
+        <div className="table-header">
+            <h3 className="p-m-0">Manage events</h3>
+        </div>
+    );
+
+    const editeventDialogFooter = (
+        <React.Fragment>
+            <Button label="No" icon="pi pi-times" className="p-button-text" onClick={hideEditeventPasswordDialog} />
+            <Button label="Yes" icon="pi pi-check" className="p-button-text" onClick={editevent} />
+        </React.Fragment>
+    );
+
+    const deleteeventDialogFooter = (
+        <React.Fragment>
+            <Button label="No" icon="pi pi-times" className="p-button-text" onClick={hideDeleteeventDialog} />
+            <Button label="Yes" icon="pi pi-check" className="p-button-text" onClick={deleteevent} />
+        </React.Fragment>
+    );
 
     return (
-        <div>
-            <div className="card">
-                <h5>Basic</h5>
-                <Chart type="line" data={basicData} options={basicOptions} />
-            </div>
+        <div className="datatable-crud-demo">
+            <Toast ref={toast} />
 
             <div className="card">
-                <h5>Multi Axis</h5>
-                <Chart type="line" data={multiAxisData} options={multiAxisOptions} />
+
+                <DataTable ref={dt} value={events} className='datatable'
+                    dataKey="email" paginator rows={10} rowsPerPageOptions={[3, 6, 9]}
+                    header={header} emptyMessage="No events found.">
+                    <Column className='columndatatable' field="equipoLocal" header="Local" filter filterPlaceholder='Search by Local Team ' sortable></Column>
+                    <Column className='columndatatable' field="equipoVisitante" header="Visitante" filter filterPlaceholder='Search by Visiting team' sortable></Column>
+                    <Column className='columndatatable' field="fecha" header="Fecha" filter filterPlaceholder='Search by date' sortable></Column>
+                    <Column className='trashButtom' body={actionBodyTemplate}></Column>
+
+                </DataTable>
             </div>
 
-            <div className="card">
-                <h5>Line Styles</h5>
-                <Chart type="line" data={lineStylesData} options={basicOptions} />
-            </div>
+            <Dialog visible={deleteeventDialog} style={{ width: '450px' }} header="Confirm" modal footer={deleteeventDialogFooter} onHide={hideDeleteeventDialog}>
+                <div className="confirmation-content">
+                    <i className="pi pi-exclamation-triangle p-mr-3" style={{ fontSize: '2rem' }} />
+                    {event && <span>Are you sure you want to delete this event?</span>}
+                </div>
+            </Dialog>
+
+            <Dialog visible={editeventPassWord} style={{ width: '450px' }} header="Confirm" modal footer={editeventDialogFooter} onHide={hideEditeventPasswordDialog}>
+                <div className="confirmation-content">
+                    <i className="pi pi-exclamation-triangle p-mr-3" style={{ fontSize: '2rem' }} />
+                    {event && <span>Enter the new password for <b>{event.email}</b></span>}
+                    <div>
+                        <h4>New Password</h4>
+                        <InputText type='text' onChange={(e) => setpassword(e.target.value)}></InputText>
+                    </div>
+                </div>
+            </Dialog>
         </div>
-    )
+    );
 }
 
-export default LineChartDemo;
+export default Events;
