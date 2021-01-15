@@ -14,9 +14,9 @@ import './Users.css';
 
 const Users = () => {
     let emptyuser = {
-        email: "",
+        email: '',
         nombre: '',
-        apellido: "",
+        apellido: '',
         edad: null,
         contraseña: ''
     };
@@ -72,7 +72,7 @@ const Users = () => {
     const editUser = () => {
         let _users = users.filter(val => val.email !== user.email);
         setuser(_users);
-        userService.changePassword(password, users.email)
+        userService.changePassword(password, user.email)
         console.log(password + " para " + user.email, user.nombre)
         setedituserPassword(false);
         toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Password changed', life: 3000 });

@@ -10,6 +10,6 @@ export default class UserService {
     }
 
     changePassword(contraseña, email){
-        axios.put('https://localhost:44380/api/Usuarios?email='+email+'&contrasena='+contraseña)
+        axios.put('https://localhost:44380/api/Usuarios?email='+email+'&contrasena='+contraseña).then(console.log(contraseña +" Nueva para "+ email))
     }
 }
