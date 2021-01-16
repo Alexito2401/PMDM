@@ -4,5 +4,12 @@
 
 .confirmation-con{
     height: 500px;
-    width: 300px;
+}
+
+.input_datetime{
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 16px;
 }

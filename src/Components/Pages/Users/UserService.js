@@ -5,8 +5,8 @@ export default class UserService {
         return axios.get('https://localhost:44380/api/Usuarios').then(res => (res.data));
     }
 
-    deleteUsers(email) {
-        axios.delete('https://localhost:44380/api/Usuarios/' + email)
+    deleteUsers(Id) {
+        axios.delete('https://localhost:44380/api/Usuarios/' + Id)
     }
 
     changePassword(contraseña, email){

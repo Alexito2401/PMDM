@@ -14,7 +14,7 @@ import './Users.css';
 
 const Users = () => {
     let emptyuser = {
-        email: '',
+        Id: '',
         nombre: '',
         apellido: '',
         edad: null,
@@ -53,9 +53,9 @@ const Users = () => {
     }
 
     const deleteuser = () => {
-        let _users = users.filter(val => val.email !== user.email);
+        let _users = users.filter(val => val.Id !== user.Id);
         setuser(_users);
-        userService.deleteUsers(user.email);
+        userService.deleteUsers(user.Id);
         setDeleteuserDialog(false);
         setuser(emptyuser);
         toast.current.show({ severity: 'success', summary: 'Successful', detail: 'User Deleted', life: 3000 });
@@ -63,10 +63,10 @@ const Users = () => {
     }
 
     const editUser = () => {
-        let _users = users.filter(val => val.email !== user.email);
+        let _users = users.filter(val => val.Id !== user.Id);
         setuser(_users);
-        userService.changePassword(password, users.email)
-        console.log(password + ' para ' + user.email, user.nombre)
+        userService.changePassword(password, users.Id)
+        console.log(password + ' para ' + user.Id, user.nombre)
         setedituserPassword(false);
         toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Password changed', life: 3000 });
     }
@@ -82,7 +82,7 @@ const Users = () => {
 
     const header = (
         <div className='table-header'>
-            <h3 className='p-m-0'>Manage Users</h3>
+            <h2 className='p-m-0'>Manage Users</h2>
         </div>
     );
 
@@ -107,27 +107,26 @@ const Users = () => {
             <div className='card'>
 
                 <DataTable ref={dt} value={users} className='datatable'
-                    dataKey='email' paginator rows={10} rowsPerPageOptions={[3, 6, 9]}
+                    dataKey='Id' paginator rows={10} rowsPerPageOptions={[3, 6, 9]}
                     header={header} emptyMessage='No users found.'>
-                    <Column className='columndatatable' field='email' header='Email' filter filterPlaceholder='Search by email' sortable></Column>
+                    <Column className='columndatatable' field='Id' header='Email' filter filterPlaceholder='Search by Id' sortable></Column>
                     <Column className='columndatatable' field='nombre' header='Nombre' filter filterPlaceholder='Search by name' sortable></Column>
                     <Column className='columndatatable' field='apellido' header='Apellido' filter filterPlaceholder='Search by surname' sortable></Column>
                     <Column className='trashButtom' body={actionBodyTemplate}></Column>
-
                 </DataTable>
             </div>
 
             <Dialog visible={deleteuserDialog} style={{ width: '450px' }} header='Confirm' modal footer={deleteuserDialogFooter} onHide={hideDeleteuserDialog}>
                 <div className='confirmation-content'>
                     <i className='pi pi-exclamation-triangle p-mr-3' style={{ fontSize: '2rem' }} />
-                    {user && <span>Are you sure you want to delete <b>{user.email}</b>?</span>}
+                    {user && <span>Are you sure you want to delete <b>{user.Id}</b>?</span>}
                 </div>
             </Dialog>
 
             <Dialog visible={edituserPassWord} style={{ width: '450px' }} header='Confirm' modal footer={edituserDialogFooter} onHide={hideEditUserPasswordDialog}>
                 <div className='confirmation-content'>
                     <i className='pi pi-exclamation-triangle p-mr-3' style={{ fontSize: '2rem' }} />
-                    {user && <span>Enter the new password for <b>{user.email}</b></span>}
+                    {user && <span>Enter the new password for <b>{user.Id}</b></span>}
                     <div>
                         <h4>New Password</h4>
                         <InputText type='text' onChange={(e) => setpassword(e.target.value)}></InputText>
