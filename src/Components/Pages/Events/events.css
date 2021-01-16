@@ -1,0 +1,15 @@
+.calendar{
+    height: 1000px;
+}
+
+.confirmation-con{
+    height: 500px;
+}
+
+.input_datetime{
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}

@@ -1,6 +1,6 @@
 import './App.css';
-import NavBar from "./Components/NavBar/NavBar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import NavBar from './Components/NavBar/NavBar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './Components/Pages/Home/Home';
 import Events from './Components/Pages/Events/Events';
 import Reports from './Components/Pages/Reports/Reports';
@@ -20,7 +20,6 @@ function App() {
           <Route path='/markets' component={Reports} />
         </Switch>
       </Router>
-
     </>
   );
 }
