@@ -27,7 +27,7 @@ export const SidebarData = [{
 },
 {
     title: 'Reports',
-    path: '/Reports',
+    path: '/reports',
     icon: <i className="pi pi-chart-bar"></i>,
     cName: 'nav-text'
 }
