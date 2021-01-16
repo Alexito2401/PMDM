@@ -14,11 +14,7 @@ import './Users.css';
 
 const Users = () => {
     let emptyuser = {
-<<<<<<< HEAD
-        email: '',
-=======
         Id: '',
->>>>>>> PE1_PMB_Events
         nombre: '',
         apellido: '',
         edad: null,
@@ -69,13 +65,8 @@ const Users = () => {
     const editUser = () => {
         let _users = users.filter(val => val.Id !== user.Id);
         setuser(_users);
-<<<<<<< HEAD
-        userService.changePassword(password, user.email)
-        console.log(password + " para " + user.email, user.nombre)
-=======
-        userService.changePassword(password, users.Id)
-        console.log(password + ' para ' + user.Id, user.nombre)
->>>>>>> PE1_PMB_Events
+        userService.changePassword(password, user.Id)
+        console.log(password + " para " + user.Id, user.nombre)
         setedituserPassword(false);
         toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Password changed', life: 3000 });
     }
@@ -118,7 +109,7 @@ const Users = () => {
                 <DataTable ref={dt} value={users} className='datatable'
                     dataKey='Id' paginator rows={10} rowsPerPageOptions={[3, 6, 9]}
                     header={header} emptyMessage='No users found.'>
-                    <Column className='columndatatable' field='Id' header='Email' filter filterPlaceholder='Search by Id' sortable></Column>
+                    <Column className='columndatatable' field='Id' header='Id' filter filterPlaceholder='Search by Id' sortable></Column>
                     <Column className='columndatatable' field='nombre' header='Nombre' filter filterPlaceholder='Search by name' sortable></Column>
                     <Column className='columndatatable' field='apellido' header='Apellido' filter filterPlaceholder='Search by surname' sortable></Column>
                     <Column className='trashButtom' body={actionBodyTemplate}></Column>
