@@ -17,7 +17,7 @@ function App() {
           <Route path='/events' component={Events} />
           <Route path='/bets' component={Bets} />
           <Route path='/users' component={Users} />
-          <Route path='/markets' component={Reports} />
+          <Route path='/reports' component={Reports} />
         </Switch>
       </Router>
     </>

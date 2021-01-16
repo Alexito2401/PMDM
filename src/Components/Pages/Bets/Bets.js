@@ -9,22 +9,9 @@ import BetsServive from './BetsService';
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
-import { RadioButton } from 'primereact/radiobutton';
 import './bets.css';
 
 const Bets = () => {
-    let emptybet = {
-        IdEvento: null,
-        TipoMercado: null,
-        cuota: null,
-        dineroApuesta: null,
-        emailUsuario: "",
-        fecha: "",
-        idApuesta: null,
-        idMercado: null,
-        tipoApuesta: ""
-    };
-
     const [bets, setbets] = useState(null);
     const [events, setevents] = useState(null);
     const [markets, setmarkets] = useState(null);

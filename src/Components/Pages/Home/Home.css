@@ -1,3 +1,7 @@
+.home{
+  background-color: #121212;
+}
+
 .CardInfo{
   background: rgba(255,255,255,1);
   background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(214,207,214,1) 100%);

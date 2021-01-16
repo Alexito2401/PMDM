@@ -7,10 +7,10 @@
   font-family: 'Lato', sans-serif;
 }
 
-.home, .events, .markets, .bets, .users{
+.home, .events, .reports, .bets, .users{
   min-height: 90vh; 
   font-size: 3rem;
-  background-color: #121212;
+  background-color: whitesmoke;
   margin-left: 200px;
   border: 2px solid #ffffff;
 }
