@@ -144,7 +144,6 @@ const Events = () => {
                     <Column className='columndatatable' field='Visitante' header='Visitante' filter filterPlaceholder='Search by Visiting team' sortable></Column>
                     <Column className='columndatatable' field='Fecha' header='Fecha' filter filterPlaceholder='Search by date' sortable></Column>
                     <Column className='trashButtom' body={actionBodyTemplate}></Column>
-
                 </DataTable>
             </div>
 
